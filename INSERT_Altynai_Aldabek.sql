@@ -7,11 +7,11 @@ VALUES ('ANNE', 'HATHAWAY'),
 INSERT INTO film_actor (actor_id, film_id)
 VALUES 
   ((SELECT actor_id FROM actor WHERE first_name = 'ANNE' AND last_name = 'HATHAWAY'), 
-   (SELECT film_id FROM actor WHERE title = 'DEVIL WEARS PRADA')),
+   (SELECT film_id FROM film WHERE title = 'DEVIL WEARS PRADA')),
   ((SELECT actor_id FROM actor WHERE first_name = 'MERYL' AND last_name = 'STREEP'), 
-   (SELECT film_id FROM actor WHERE title = 'DEVIL WEARS PRADA')),
+   (SELECT film_id FROM film WHERE title = 'DEVIL WEARS PRADA')),
   ((SELECT actor_id FROM actor WHERE first_name = 'EMILY' AND last_name = 'BLUNT'), 
-   (SELECT film_id FROM actor WHERE title = 'DEVIL WEARS PRADA'));
+   (SELECT film_id FROM film WHERE title = 'DEVIL WEARS PRADA'));
 
 INSERT INTO inventory (film_id, store_id)
 VALUES ((SELECT film_id FROM film WHERE title = 'DEVIL WEARS PRADA'), 1);
